@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+      <link href="css/ionic.app.css" rel="stylesheet">
+      -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+  </head>
+  <body ng-app="starter" >
+      <!-- <div class="icon ion-settings"></div> -->
+      <div class="trPic">
+        <div  ng-controller="forwardCtl" class="forward">
+          <button  on-release="onRelease()" on-touch="onTouch()" class="button">前进</button>
+        </div>
+        <div ng-controller="leftCtl" class="left">
+          <button  on-release="onRelease()" on-touch="onTouch()" class="button">左转</button>
+        </div>
+        <div ng-controller="rightCtl" class="right">
+          <button  on-release="onRelease()" on-touch="onTouch()" class="button">右转</button>
+        </div>
+        <div ng-controller="reverseCtl" class="backward">
+          <button on-release="onRelease()" on-touch="onTouch()" class="button">后退</button>
+        </div>
+         <div ng-controller="stopCtl" class="stop">
+          <button on-touch="onTouch()" class="button-stop">停止</button>
+        </div>
+
+        <!--
+        <div ng-controller="p_rightCtl">
+          <button on-release="onRelease()" on-touch="onTouch()" class="button">P_right</button>
+        </div> -->
+      </div>
+      <div ng-controller="toggleAuto">
+        <ion-toggle ng-model=value ng-change="toggleChange()">自动避障前进</ion-toggle>
+      </div>
+  </body>
+</html>

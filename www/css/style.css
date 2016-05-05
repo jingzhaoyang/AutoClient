@@ -1,0 +1,128 @@
+/x  `* Empty. Add your own CSS if you like */
+button.small {
+margin: 0px;
+width: 24px;
+height: 24px;
+font-size: 12pt;
+font-weight: bold;
+color: black;
+}
+.button {
+margin: 0px;
+width: 80px;
+height: 80px;
+font-size: 12pt;
+font-weight: bold;
+background-color: #2CDE29;
+color: black;
+}
+
+.button-stop {
+margin: 0px;
+width: 80px;
+height: 80px;
+font-size: 12pt;
+font-weight: bold;
+background-color: #F70606;
+color: black;
+}
+
+.trPic{
+margin: auto;
+
+position:absolute;
+/*top:0px;*/
+top: 0; left: 0; bottom: 0; right: 0;
+left:0px;
+width:320px;
+height:480px;
+/*background: url(http://192.168.178.66:8080/?action=stream) no-repeat;*/
+background: #FFFFFF;
+border:0px solid #000000;
+}
+.trPic .forward{
+position:absolute;
+top:120px;
+left:120px;
+width:80px;
+height:80px;
+opacity:1;
+z-index: 20;
+background:  #2CDE29;
+background-position: center center;
+border:0px solid #000000;
+}
+
+.trPic .backward{
+position:absolute;
+top:280px;
+left:120px;
+width:80px;
+height:80px;
+opacity:1;
+z-index: 20;
+background:  #2CDE29;
+background-position: center center;
+border:0px solid #000000;
+}
+
+.trPic .left{
+position:absolute;
+top:200px;
+left:40px;
+width:80px;
+height:80px;
+opacity:1;
+z-index: 20;
+background:  #2CDE29;
+background-position: center center;
+border:0px solid #000000;
+}
+
+.trPic .right{
+position:absolute;
+top:200px;
+left:200px;
+width:80px;
+height:80px;
+opacity:1;
+z-index: 20;
+/*background: url(/img/arrow_right.png) no-repeat;*/
+background:  #2CDE29;
+background-position: center center;
+border:0px solid #000000;
+}
+
+.trPic .stop{
+position:absolute;
+top:200px;
+left:120px;
+width:80px;
+height:80px;
+opacity:1;
+z-index: 20;
+/*background: url(/img/stop.png) no-repeat;*/
+background:  #DE2974;
+background-position: center center;
+border:0px solid #000000;
+}
+
+.forward:hover {
+opacity:1;
+}
+
+.backward:hover {
+opacity:1;
+}
+
+.left:hover {
+opacity:1;
+}
+
+.right:hover {
+opacity:1;
+}
+
+.stop:hover {
+opacity:1;
+}
