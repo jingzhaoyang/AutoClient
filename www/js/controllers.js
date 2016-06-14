@@ -1,9 +1,6 @@
 angular.module('starter.controllers', [])
 
 .controller( 'forwardCtl',['$scope','$http',function($scope,$http){
-    // function go($scope,k){
-    //         $http.post('http://192.168.31.11/',{k:k},function(){});
-    // };
     function go($scope,message) {
         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
         $http({
