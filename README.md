@@ -33,5 +33,6 @@ ionic emulate android
 在build目录有编译好的apk文件，可以直接在Android平台直接使用。
 
 ## 联系我们
-
+如果遇到问题可以直接在github的issue上提问，也可以通过下面的qq群或论坛提问。
 * QQ群 ： 536720498
+* 论坛 ： club.52robot.org
