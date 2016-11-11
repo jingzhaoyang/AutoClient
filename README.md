@@ -1,10 +1,14 @@
 # 远程控制小车
 
+## 服务端项目地址
+
+[小车服务端代码](https://github.com/jingzhaoyang/carServer)
+
 ## ionic环境搭建
 
 安装ionic
 ```
-npm install -g cordova ionic
+npm install cordova ionic
 ```
 
 ## 克隆小车客户端代码
@@ -24,3 +28,10 @@ ionic build android
 ionic emulate android
 ```
 
+## 编译好的APK文件
+
+在build目录有编译好的apk文件，可以直接在Android平台直接使用。
+
+## 联系我们
+
+* QQ群 ： 536720498
