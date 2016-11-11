@@ -1,196 +1,109 @@
-angular.module('starter.controllers', [])
+angular.module('starter')
 
-.controller( 'forwardCtl',['$scope','$http',function($scope,$http){
-    function go($scope,message) {
-        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-        $http({
-            url: 'http://192.168.31.11/',
-            method: "post",
-            data: {"k":message}
-        })
-        .then(function(response) {
-          console.log("ok")
-                // success
-        },
-        function(response) { // optional
-          console.log("error")
-                // failed
-        });
-    };
-    $scope.onTouch=function(){
-      // alert("你触发了on-touch")
-      console.log("touch");
-      go($scope,"w");
-      console.log("w");
-    };
-    $scope.onRelease=function(){
-      console.log("relese");
-      go($scope,"stop");
-      console.log("stop");
-    };
-}])
+.controller('forwardCtl', function($scope, $http, SendCommand) {
 
-.controller( 'reverseCtl',['$scope','$http',function($scope,$http){
-    // function go($scope,k){
-    //         $http.post('http://192.168.31.11/',{k:k},function(){});
-    // };
-    function go($scope,message) {
-        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-        $http({
-            url: 'http://192.168.31.11/',
-            method: "post",
-            data: {"k":message}
-        })
-        .then(function(response) {
-          console.log("ok")
-                // success
-        },
-        function(response) { // optional
-          console.log("error")
-                // failed
-        });
-    };
-    $scope.onTouch=function(){
-      // alert("你触发了on-touch")
-      console.log("touch");
-      go($scope,"s");
-      console.log("s");
-    };
-    $scope.onRelease=function(){
-      console.log("relese");
-      go($scope,"stop");
-      console.log("stop");
-    };
-}])
+  $scope.onTouch = function() {
+    SendCommand.go('w');
+  };
+  $scope.onRelease = function() {
+    SendCommand.go("stop");
+  };
+})
 
-.controller( 'leftCtl',['$scope','$http',function($scope,$http){
-    // function go($scope,k){
-    //         $http.post('http://192.168.31.11/',{k:k},function(){});
-    // };
-    function go($scope,message) {
-        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-        $http({
-            url: 'http://192.168.31.11/',
-            method: "post",
-            data: {"k":message}
-        })
-        .then(function(response) {
-          console.log("ok")
-                // success
-        },
-        function(response) { // optional
-          console.log("error")
-                // failed
-        });
-    };
-    $scope.onTouch=function(){
-      // alert("你触发了on-touch")
-      console.log("touch");
-      go($scope,"a");
-      console.log("a");
-    };
-    $scope.onRelease=function(){
-      console.log("relese");
-      go($scope,"stop");
-      console.log("stop");
-    };
-}])
+.controller('reverseCtl',function($scope, $http, SendCommand) {
 
-.controller( 'rightCtl',['$scope','$http',function($scope,$http){
-    // function go($scope,k){
-    //         $http.post('http://192.168.31.11/',{k:k},function(){});
-    // };
-    function go($scope,message) {
-        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-        $http({
-            url: 'http://192.168.31.11/',
-            method: "post",
-            data: {"k":message}
-        })
-        .then(function(response) {
-          console.log("ok")
-                // success
-        },
-        function(response) { // optional
-          console.log("error")
-                // failed
-        });
-    };
-    $scope.onTouch=function(){
-      // alert("你触发了on-touch")
-      console.log("touch");
-      go($scope,"d");
-      console.log("d");
-    };
-    $scope.onRelease=function(){
-      console.log("relese");
-      go($scope,"stop");
-      console.log("stop");
-    };
-}])
+  $scope.onTouch = function() {
+    SendCommand.go("s");
+  };
+  $scope.onRelease = function() {
+    SendCommand.go("stop");
+  };
+})
 
-.controller( 'stopCtl',['$scope','$http',function($scope,$http){
-    // function go($scope,k){
-    //         $http.post('http://192.168.31.11/',{k:k},function(){});
-    // };
-    function go($scope,message) {
-        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-        $http({
-            url: 'http://192.168.31.11/',
-            method: "post",
-            data: {"k":message}
-        })
-        .then(function(response) {
-          console.log("ok")
-                // success
-        },
-        function(response) { // optional
-          console.log("error")
-                // failed
-        });
-    };
-    $scope.onTouch=function(){
-      console.log("relese");
-      go($scope,"stop");
-      console.log("stop");
-    };
-}])
+.controller('leftCtl', function($scope, $http, SendCommand) {
+  $scope.onTouch = function() {
+    SendCommand.go("a");
+  };
+  $scope.onRelease = function() {
+    SendCommand.go("stop");
+  };
+})
 
-.controller( 'toggleAuto',['$scope','$http',function($scope,$http){
-    // function go($scope,k){
-    //         $http.post('http://192.168.31.11/',{k:k},function(){});
-    // };
-    function go($scope,message) {
-        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-        $http({
-            url: 'http://192.168.31.11/',
-            method: "post",
-            data: {"k":message}
-        })
-        .then(function(response) {
-          console.log("ok")
-                // success
-        },
-        function(response) { // optional
-          console.log("error")
-                // failed
-        });
-    };
-    $scope.value = false;
+.controller('rightCtl', function($scope, $http, SendCommand) {
+  $scope.onTouch = function() {
+    SendCommand.go("d");
+  };
+  $scope.onRelease = function() {
+    SendCommand.go("stop");
+  };
+})
+
+.controller('stopCtl', function($scope, $http, SendCommand) {
+  $scope.onTouch = function() {
+    console.log("relese");
+    SendCommand.go("stop");
+    console.log("stop");
+  };
+})
+
+.controller('toggleAuto', function($scope, $http, SendCommand) {
+  $scope.value = false;
+  console.log($scope.value);
+  $scope.toggleChange = function() {
     console.log($scope.value);
-    $scope.toggleChange = function() {
-      console.log($scope.value);
-      if ($scope.value == true){
-          console.log("start");
-          $scope.value = true;
-          console.log("start");
-          go($scope,"auto");
-          console.log("Auto");
-        } else {
-          $scope.value = false;
-          console.log("Autosop");
-          go($scope, "stop");
-          console.log("Stop");
-        };
+    if ($scope.value == true) {
+      console.log("start");
+      $scope.value = true;
+      console.log("start");
+      SendCommand.go("auto");
+      console.log("Auto");
+    } else {
+      $scope.value = false;
+      console.log("Autosop");
+      SendCommand.go("stop");
+      console.log("Stop");
     };
-}])
+  };
+})
+
+.controller('setServer', function($scope, $ionicPopup, SendCommand) {
+  $scope.showPopup = function() {
+    $scope.data = {};
+  // An elaborate, custom popup
+    var myPopup = $ionicPopup.show({
+      template: '<input ng-model="data.ip">',
+      title: '请输入服务器地址和端口',
+      scope: $scope,
+      buttons: [
+        { text: '取消' },
+        {
+          text: '<b>保存</b>',
+          type: 'button-positive',
+          onTap: function(e) {
+            if (!$scope.data.ip) {
+              //don't allow the user to close unless he enters wifi password
+              e.preventDefault();
+            } else {
+              return $scope.data.ip;
+            }
+          }
+        }
+      ]
+    });
+  myPopup.then(function(server) {
+    SendCommand.storeServer(server);
+  });
+ };
+})
+
+.controller('refresh_control', function($scope, SendCommand, $http, $timeout){
+  $scope.intervalFunction = function () {
+    $timeout(function () {
+      var server = SendCommand.loadServer();
+      $scope.imageURL = 'http://' + server + '/video_feed';
+      $scope.imageUrl = $scope.imageURL + '?' + new Date().getTime();
+      $scope.intervalFunction();
+    }, 100)
+  };
+  $scope.intervalFunction();
+})

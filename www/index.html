@@ -33,17 +33,20 @@
         <div ng-controller="reverseCtl" class="backward">
           <button on-release="onRelease()" on-touch="onTouch()" class="button">后退</button>
         </div>
-         <div ng-controller="stopCtl" class="stop">
+        <div ng-controller="stopCtl" class="stop">
           <button on-touch="onTouch()" class="button-stop">停止</button>
         </div>
-
-        <!--
-        <div ng-controller="p_rightCtl">
-          <button on-release="onRelease()" on-touch="onTouch()" class="button">P_right</button>
-        </div> -->
       </div>
       <div ng-controller="toggleAuto">
         <ion-toggle ng-model=value ng-change="toggleChange()">自动避障前进</ion-toggle>
+      </div>
+      <div ng-controller="setServer">
+        <button class="button button-full button-positive" style="height:50px;" ng-click="showPopup()">
+          设置
+        </button>
+      </div>
+      <div ng-controller="refresh_control"  class="video" >
+        <img ng-src="{{imageUrl}}" />
       </div>
   </body>
 </html>
